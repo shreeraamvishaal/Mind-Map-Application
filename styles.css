@@ -1,0 +1,9 @@
+/* Remove any custom styles that conflict with Tailwind CSS */
+body {
+    font-family: Arial, sans-serif;
+}
+
+#canvas {
+    width: 800px; /* Set a fixed width for the canvas */
+    height: 600px; /* Set a fixed height for the canvas */
+}

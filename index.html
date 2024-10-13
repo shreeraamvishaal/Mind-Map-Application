@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mind Map Application</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body class="bg-gray-100">
+    <div class="header text-center p-5">
+        <h1 class="text-4xl font-bold">Mind Map Application</h1>
+    </div>
+    <div class="container flex justify-center items-start mx-auto max-w-7xl">
+        <div class="controls flex flex-col items-center p-4">
+            <input type="text" id="nodeText" class="border p-2 rounded mb-2 w-56" placeholder="Enter node text">
+            <input type="color" id="nodeColor" class="mb-2">
+            <button id="addNodeButton" class="bg-blue-500 text-white p-2 rounded mb-2 w-56">Add Node</button>
+            <button id="deleteNodeButton" class="bg-red-500 text-white p-2 rounded mb-2 w-56">Delete Node</button>
+            <button id="renameNodeButton" class="bg-yellow-500 text-white p-2 rounded mb-2 w-56">Rename Node</button>
+            <button id="saveImageButton" class="bg-green-500 text-white p-2 rounded mb-2 w-56">Export as Image</button>
+            <button id="clearButton" class="bg-gray-500 text-white p-2 rounded mb-2 w-56">Clear Mind Map</button>
+        </div>
+
+        <canvas id="canvas" class="border border-blue-500 rounded-lg shadow-lg"></canvas>
+        
+        <div class="flex flex-col ml-4">
+            <div class="rough-notes bg-white shadow-md rounded p-4 mb-4">
+                <h2 class="text-lg font-bold">Rough Notes</h2>
+                <textarea id="notes" class="border rounded p-2 w-full" placeholder="Write your rough notes here..."></textarea>
+            </div>
+
+            <div class="bullet-points bg-white shadow-md rounded p-4">
+                <h4 class="text-lg font-bold">Action Items</h4>
+                <input type="text" id="bulletInput" class="border p-2 rounded mb-2 w-full" placeholder="Add Action item">
+                <button onclick="addBulletPoint()" class="bg-blue-500 text-white p-2 rounded mb-2 w-full">Add Action Item</button>
+                <button onclick="deleteBulletPoint()" class="bg-red-500 text-white p-2 rounded mb-2 w-full">Delete Selected Action Item</button>
+                <ul id="bulletList" class="list-disc list-inside"></ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
